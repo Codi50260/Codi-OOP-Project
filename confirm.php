@@ -1,5 +1,4 @@
-<?php if ($_POST) {
-
+<?php
 session_start();
 
 function dateDiffInDays($date1, $date2) 
@@ -13,6 +12,21 @@ function dateDiffInDays($date1, $date2)
 		echo "Invalid dates, please return and correct error";
 		return False;
 	}
+}
+class The_White_Rock_Hotel {
+	public $rate = 70;
+	public $facilities = ['restaurant', 'bar', 'spa'];
+	public $desc = "The White Rock Hotel is in the center of Athens, 5 minutes walking distance from Larissa railway station and Metaxourghio Metro station. The hotel boasts a roof garden from which you can relax and enjoy a splendid view of the city and the Acropolis. The roof garden is open from May to the end of September. Free Wi-Fi is also included.";
+}
+class Spotlight_Hotel {
+	public $rate = 100;
+	public $facilities = ['restaurant', 'bar', 'swimming pool', 'gym'];
+	public $desc = "The Spotlight Hotel is located in the heart of the Historical Center of Athens and has recently been renovated. It's surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It's located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices.";
+}
+class Hotel_Bliss {
+	public $rate = 140;
+	public $facilities = ['restaurant', 'bar', 'pick-up / drop-off', 'swimming pool', 'spa', 'gym'];
+	public $desc = "Hotel Bliss is strategically located, less than 3 km away from Vatican City. Well connected by public transport. Decorated & furnished in a modern elegant style, our rooms and facilities are fresh & stylish, yet maintaining a coziness & warmth that are essential to us. Extra comfort is guaranteed by our hi-speed Wi-Fi, satellite HD LCD TVs, sound-proof double windows, and other facilities.";
 }
 ?>
 <html class="no-js">
@@ -108,58 +122,54 @@ function dateDiffInDays($date1, $date2)
 							<h3>Booking for Hotel:</h3>
 						</div>
 						<br>
-						<form action="#" method="" >
-
+						<form action="thanks.php">
 							<p>
-								<label for="name" id="formText">First Name:</label>
-								<input type="text" name="name" style="color: dimgray;" onclick="this.value=''" required>
-					
-							</p>
-			
-							<p>
-								<label for="surname" id="formText">Surname:</label>
-								<input type="text" name="surname" style="color: dimgray;" onclick="this.value=''" required>
-					
-							</p>
-			
-							<p>
-								<label for="email" id="formText">Email Address:</label>
-								<input type="email" name="email" style="color: dimgray;" onclick="this.value=''" required>
-							</p>
-			
-							<p>
-								<label for="hotel" id="formText">Hotel:</label>
+								<label for="hotel" id="formText">Hotel chosen:</label>
 								<?php
-								echo $_POST['Hotel_Name'];
+								if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
+									$hotel = new The_White_Rock_Hotel();
+								} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
+									$hotel = new Spotlight_Hotel();
+								} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
+									$hotel = new Hotel_Bliss();
+								}
+								echo "<br>".$_POST['Hotel_Name'];
+								echo "<br>Daily rate: $".$hotel->rate;
 								?>
-					
 							</p>
-			
+							<p>
+								<label for="numdays" id="formText">Number of Days:</label>
+								<?php
+								$dateDiff = dateDiffInDays($_POST["CheckIn"], $_POST["CheckOut"]);
+								echo "<br>".$dateDiff;
+								echo "<br>Total cost: $".$hotel->rate * $dateDiff;
+								?>
+							</p>
 							<p>
 								<label for="checkIn" id="formText">Check in:</label>
 								<?php
 								echo $_POST["CheckIn"];
 								?>
-						
 							</p>
-			
 							<p>
 								<label for="checkOut" id="formText">Check out:</label>
 								<?php
 								echo $_POST["CheckOut"];
 								?>
-					
 							</p>
-
+							<h3>Please fill in the details below to complete booking</h3>
 							<p>
-								<label for="numdays" id="formText">Number of Days:</label>
-								<?php
-								$dateDiff = dateDiffInDays($_POST["CheckIn"], $_POST["CheckOut"]);
-								echo $dateDiff;
-								?>
-					
+								<label for="name" id="formText">First Name:</label>
+								<input type="text" name="name" style="color: dimgray;" onclick="this.value=''" required>
 							</p>
-							
+							<p>
+								<label for="surname" id="formText">Surname:</label>
+								<input type="text" name="surname" style="color: dimgray;" onclick="this.value=''" required>
+							</p>
+							<p>
+								<label for="email" id="formText">Email Address:</label>
+								<input type="email" name="email" style="color: dimgray;" onclick="this.value=''" required>
+							</p>
 							<?php
 							if ($dateDiff != FALSE) {
 								echo "<input type='submit' value='Book'>";
@@ -254,8 +264,3 @@ function dateDiffInDays($date1, $date2)
 
 </body>
 </html>
-<?php
-    } else{
-        echo "Thank you! Your booking has been made :)";
-    }
-?>
