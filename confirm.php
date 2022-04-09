@@ -16,24 +16,21 @@ function dateDiffInDays($date1, $date2)
 class The_White_Rock_Hotel {
 	public $rate = 70;
 	public $facilities = ['restaurant', 'bar', 'spa'];
-	public $desc = "The White Rock Hotel is in the center of Athens, 5 minutes walking distance from Larissa railway station and Metaxourghio Metro station. The hotel boasts a roof garden from which you can relax and enjoy a splendid view of the city and the Acropolis. The roof garden is open from May to the end of September. Free Wi-Fi is also included.";
 }
 class Spotlight_Hotel {
 	public $rate = 100;
 	public $facilities = ['restaurant', 'bar', 'swimming pool', 'gym'];
-	public $desc = "The Spotlight Hotel is located in the heart of the Historical Center of Athens and has recently been renovated. It's surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It's located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices.";
 }
 class Hotel_Bliss {
 	public $rate = 140;
 	public $facilities = ['restaurant', 'bar', 'pick-up / drop-off', 'swimming pool', 'spa', 'gym'];
-	public $desc = "Hotel Bliss is strategically located, less than 3 km away from Vatican City. Well connected by public transport. Decorated & furnished in a modern elegant style, our rooms and facilities are fresh & stylish, yet maintaining a coziness & warmth that are essential to us. Extra comfort is guaranteed by our hi-speed Wi-Fi, satellite HD LCD TVs, sound-proof double windows, and other facilities.";
 }
 ?>
 <html class="no-js">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Codi's OOP Booking App | Services</title>
+	<title>Codi's OOP Booking App | Confirm</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   	<!-- Facebook and Twitter integration -->
