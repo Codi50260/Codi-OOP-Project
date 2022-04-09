@@ -122,7 +122,7 @@ class Hotel_Bliss {
 							<h3>Booking for Hotel:</h3>
 						</div>
 						<br>
-						<form action="thanks.php">
+						<form method="post" action="thanks.php">
 							<p>
 								<label for="hotel" id="formText">Hotel chosen:</label>
 								<?php
@@ -175,6 +175,9 @@ class Hotel_Bliss {
 								echo "<input type='submit' value='Book'>";
 							}
 							?>
+						</form>
+						<form method="get" action="index.php">
+							<input type="submit" value="Cancel">
 						</form>
 					</div>
 				</div>
