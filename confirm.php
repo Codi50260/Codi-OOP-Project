@@ -1,4 +1,20 @@
-<?php session_start();?>
+<?php if ($_POST) {
+
+session_start();
+
+function dateDiffInDays($date1, $date2) 
+{
+	// Calculating the difference in timestamps
+	$diff = strtotime($date2) - strtotime($date1);
+
+	if ($diff > 0) {
+		return abs(round($diff / 86400));
+	} else {
+		echo "Invalid dates, please return and correct error";
+		return False;
+	}
+}
+?>
 <html class="no-js">
 	<head>
 	<meta charset="utf-8">
@@ -134,8 +150,21 @@
 								?>
 					
 							</p>
-				
-							<input type="submit" value="Book">
+
+							<p>
+								<label for="numdays" id="formText">Number of Days:</label>
+								<?php
+								$dateDiff = dateDiffInDays($_POST["CheckIn"], $_POST["CheckOut"]);
+								echo $dateDiff;
+								?>
+					
+							</p>
+							
+							<?php
+							if ($dateDiff != FALSE) {
+								echo "<input type='submit' value='Book'>";
+							}
+							?>
 						</form>
 					</div>
 				</div>
@@ -225,3 +254,8 @@
 
 </body>
 </html>
+<?php
+    } else{
+        echo "Thank you! Your booking has been made :)";
+    }
+?>
