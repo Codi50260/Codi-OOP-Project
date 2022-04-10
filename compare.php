@@ -90,7 +90,7 @@ class Hotel_Bliss {
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li><a href="index.php">Home</a></li>
 							<li><a class="active" href="compare.php">Compare</a></li>
-							<li><a href="confirm.php">Confirmation</a></li>
+							<li><a href="#">Confirmation</a></li>
 						</ul>
 					</nav>
 				</div>
