@@ -1,4 +1,4 @@
-<?php
+<?php require 'classes.php';
 
 function dateDiffInDays($date1, $date2) 
 {
