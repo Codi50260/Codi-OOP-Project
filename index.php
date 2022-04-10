@@ -1,3 +1,23 @@
+<?php
+class The_White_Rock_Hotel {
+	public $name = "The White Rock Hotel";
+	public $image = "images/hotels/White_Rock_Hotel.jpg";
+	public $rate = 70;
+	public $desc = "The White Rock Hotel is in the center of Athens, 5 minutes walking distance from Larissa railway station and Metaxourghio Metro station. The hotel boasts a roof garden from which you can relax and enjoy a splendid view of the city and the Acropolis. The roof garden is open from May to the end of September. Free Wi-Fi is also included.";
+}
+class Spotlight_Hotel {
+	public $name = "Spotlight Hotel";
+	public $image = "images/hotels/Spotlight_Hotel.webp";
+	public $rate = 100;
+	public $desc = "The Spotlight Hotel is located in the heart of the Historical Center of Athens and has recently been renovated. It's surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It's located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices.";
+}
+class Hotel_Bliss {
+	public $name = "Hotel Bliss";
+	public $image = "images/hotels/Hotel_Bliss.jpg";
+	public $rate = 140;
+	public $desc = "Hotel Bliss is strategically located, less than 3 km away from Vatican City. Well connected by public transport. Decorated & furnished in a modern elegant style, our rooms and facilities are fresh & stylish, yet maintaining a coziness & warmth that are essential to us. Extra comfort is guaranteed by our hi-speed Wi-Fi, satellite HD LCD TVs, sound-proof double windows, and other facilities.";
+}
+?>
 <html class="no-js">
 		<head>
 		<meta charset="utf-8">
@@ -165,19 +185,19 @@
 				<div class="row">
 					<div class="col-md-3 text-center">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="20356" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="fh5co-counter-label">User Access</span>
+						<span class="fh5co-counter-label">Current Users</span>
 					</div>
 					<div class="col-md-3 text-center">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="15501" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="fh5co-counter-label">Hotels</span>
-					</div>
-					<div class="col-md-3 text-center">
-						<span class="fh5co-counter js-counter" data-from="0" data-to="8200" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="fh5co-counter-label">Transactions</span>
+						<span class="fh5co-counter-label">Check-Ins</span>
 					</div>
 					<div class="col-md-3 text-center">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="8763" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="fh5co-counter-label">Rating &amp; Review</span>
+						<span class="fh5co-counter-label">Reviews and Ratings</span>
+					</div>
+					<div class="col-md-3 text-center">
+						<span class="fh5co-counter js-counter" data-from="0" data-to="4850" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">Staff on Hand</span>
 					</div>
 				</div>
 			</div>
@@ -196,41 +216,61 @@
 
 				<div class="row">
 					<div class="feature-full-1col">
-						<div class="image" style="background-image: url(images/hotel_feture_1.jpg);">
+						<?php
+							$Bliss = new Hotel_Bliss();
+							echo "<div class='image' style='background-image: url(".$Bliss->image.");'>";
+						?>
 							<div class="descrip text-center">
-								<p><span>$140/night</span></p>
+								<?php
+									echo "<p><span>$".$Bliss->rate."/night</span></p>";
+								?>
 							</div>
 						</div>
 						<div class="desc">
-							<h3>Hotel Bliss</h3>
-							<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. Vivamus augue enim, consectetur ac interdum a, pulvinar ac massa. Nullam malesuada congue </p>
+							<?php
+								echo "<h3>".$Bliss->name."</h3>";
+								echo "<p>".$Bliss->desc."</p>";
+							?>
 							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 						</div>
 					</div>
 
 					<div class="feature-full-2col">
 						<div class="f-hotel">
-							<div class="image" style="background-image: url(images/hotel_feture_2.jpg);">
+							<?php
+								$Spotlight = new Spotlight_Hotel();
+								echo "<div class='image' style='background-image: url(".$Spotlight->image.");'>";
+							?>
 								<div class="descrip text-center">
-									<p><span>$100/night</span></p>
+									<?php
+										echo "<p><span>$".$Spotlight->rate."/night</span></p>";
+									?>
 								</div>
 							</div>
 							<div class="desc">
-								<h3>Spotlight Hotel</h3>
-								<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, 
-								in suscipit urna condimentum sed. </p>
+								<?php
+									echo "<h3>".$Spotlight->name."</h3>";
+									echo "<p>".$Spotlight->desc."</p>";
+								?>
 								<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 							</div>
 						</div>
 						<div class="f-hotel">
-							<div class="image" style="background-image: url(images/hotel_feture_3.jpg);">
+							<?php
+								$WhiteRock = new The_White_Rock_Hotel();
+								echo "<div class='image' style='background-image: url(".$WhiteRock->image.");'>";
+							?>
 								<div class="descrip text-center">
-									<p><span>$70/night</span></p>
+									<?php
+										echo "<p><span>$".$WhiteRock->rate."/night</span></p>";
+									?>
 								</div>
 							</div>
 							<div class="desc">
-								<h3>The White Rock Hotel</h3>
-								<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. </p>
+								<?php
+									echo "<h3>".$WhiteRock->name."</h3>";
+									echo "<p>".$WhiteRock->desc."</p>";
+								?>
 								<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 							</div>
 						</div>
