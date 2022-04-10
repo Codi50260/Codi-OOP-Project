@@ -1,4 +1,3 @@
-<?php session_start();?>
 <html class="no-js">
 		<head>
 		<meta charset="utf-8">
@@ -637,11 +636,3 @@
 
 	</body>
 </html>
-
-<?php
-
-	// $_SESSION['hotel'] = $_POST['Hotel_Name'];
-	// $_SESSION['check_in'] = $_POST['CheckIn'];
-	// $_SESSION['check_out'] = $_POST['CheckOut'];
-
-?>
