@@ -12,18 +12,6 @@ function dateDiffInDays($date1, $date2)
 		return False;
 	}
 }
-class The_White_Rock_Hotel {
-	public $rate = 70;
-	public $facilities = ['restaurant', 'bar', 'spa'];
-}
-class Spotlight_Hotel {
-	public $rate = 100;
-	public $facilities = ['restaurant', 'bar', 'swimming pool', 'gym'];
-}
-class Hotel_Bliss {
-	public $rate = 140;
-	public $facilities = ['restaurant', 'bar', 'pick-up / drop-off', 'swimming pool', 'spa', 'gym'];
-}
 ?>
 <html class="no-js">
 	<head>
