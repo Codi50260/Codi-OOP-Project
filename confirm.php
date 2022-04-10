@@ -6,8 +6,8 @@ function dateDiffInDays($date1, $date2)
 	// Calculating the difference in timestamps
 	$diff = strtotime($date2) - strtotime($date1);
 
-	if ($diff > 0) {
-		return abs(round($diff / 86400));
+	if ($diff >= 0) {
+		return abs(round($diff / 86400) + 1);
 	} else {
 		echo "Invalid dates, please return and correct error";
 		return False;
