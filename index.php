@@ -6,21 +6,8 @@
 		<title>Codi's OOP Booking App | Home</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Facebook and Twitter integration -->
-		<meta property="og:title" content=""/>
-		<meta property="og:image" content=""/>
-		<meta property="og:url" content=""/>
-		<meta property="og:site_name" content=""/>
-		<meta property="og:description" content=""/>
-		<meta name="twitter:title" content="" />
-		<meta name="twitter:image" content="" />
-		<meta name="twitter:url" content="" />
-		<meta name="twitter:card" content="" />
-
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<link rel="shortcut icon" href="favicon.ico">
-
-		<!-- Stylesheets -->
 		<!-- Dropdown Menu -->
 		<link rel="stylesheet" href="css/superfish.css">
 		<!-- Date Picker -->
@@ -28,7 +15,6 @@
 		<!-- CS Select -->
 		<link rel="stylesheet" href="css/cs-select.css">
 		<link rel="stylesheet" href="css/cs-skin-border.css">
-
 		<!-- Themify Icons -->
 		<link rel="stylesheet" href="css/themify-icons.css">
 		<!-- Flat Icon -->
@@ -37,10 +23,8 @@
 		<link rel="stylesheet" href="css/icomoon.css">
 		<!-- Flexslider  -->
 		<link rel="stylesheet" href="css/flexslider.css">
-		
 		<!-- Style -->
 		<link rel="stylesheet" href="css/style.css">
-
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
 
@@ -53,7 +37,7 @@
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.php">Codi's Booking App</a></h1>
+						<h1 id="fh5co-logo"><a href="index.php">Codi's DF Booking App | April 2022</a></h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
 								<li><a class="active"href="index.php">Home</a></li>
@@ -150,10 +134,10 @@
 								</div>
 							</div>
 							<div class="a-col action">
-								<button type="button" onclick="window.location.href='compare.php'" style="background-color: #3c4146">Compare Hotels</button>
+								<button type="button" onclick="window.location.href='compare.php'" style="background-color: #6e6c69; color: white" >Compare Hotels</button>
 							</div>
 							<div class="a-col action">
-								<button type="submit" style="background-color: #3c4146">Check Availability</button>
+								<button type="submit" style="background-color: #6e6c69; color: white">Check Availability</button>
 							</div>
 						</form>
 					</div>
@@ -165,8 +149,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 text-center">
-						<span class="fh5co-counter js-counter" data-from="0" data-to="20356" data-speed="5000" data-refresh-interval="50"></span>
-						<span class="fh5co-counter-label">Current Users</span>
+						<span class="fh5co-counter js-counter" data-from="0" data-to="251102" data-speed="5000" data-refresh-interval="50"></span>
+						<span class="fh5co-counter-label">Current Guests</span>
 					</div>
 					<div class="col-md-3 text-center">
 						<span class="fh5co-counter js-counter" data-from="0" data-to="15501" data-speed="5000" data-refresh-interval="50"></span>
@@ -216,48 +200,46 @@
 						</div>
 					</div>
 
-					<div class="feature-full-2col">
-						<div class="f-hotel">
-							<?php
-								$Spotlight = new Spotlight_Hotel();
-								echo "<div class='image' style='background-image: url(".$Spotlight->image.");'>";
-							?>
-								<div class="descrip text-center">
-									<?php
-										echo "<p><span>$".$Spotlight->rate."/night</span></p>";
-									?>
-								</div>
-							</div>
-							<div class="desc">
+					<div class="feature-full-1col">
+						<?php
+							$Spotlight = new Spotlight_Hotel();
+							echo "<div class='image' style='background-image: url(".$Spotlight->image.");'>";
+						?>
+							<div class="descrip text-center">
 								<?php
-									echo "<h3>".$Spotlight->name."</h3>";
-									echo "<p>".$Spotlight->desc."</p>";
+									echo "<p><span>$".$Spotlight->rate."/night</span></p>";
 								?>
-								<p><a href="#form" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 							</div>
 						</div>
-						<div class="f-hotel">
+						<div class="desc">
 							<?php
-								$WhiteRock = new The_White_Rock_Hotel();
-								echo "<div class='image' style='background-image: url(".$WhiteRock->image.");'>";
+								echo "<h3>".$Spotlight->name."</h3>";
+								echo "<p>".$Spotlight->desc."</p>";
 							?>
-								<div class="descrip text-center">
-									<?php
-										echo "<p><span>$".$WhiteRock->rate."/night</span></p>";
-									?>
-								</div>
-							</div>
-							<div class="desc">
+							<p><a href="#form" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+						</div>
+					</div>
+
+					<div class="feature-full-1col">
+						<?php
+							$WhiteRock = new The_White_Rock_Hotel();
+							echo "<div class='image' style='background-image: url(".$WhiteRock->image.");'>";
+						?>
+							<div class="descrip text-center">
 								<?php
-									echo "<h3>".$WhiteRock->name."</h3>";
-									echo "<p>".$WhiteRock->desc."</p>";
+									echo "<p><span>$".$WhiteRock->rate."/night</span></p>";
 								?>
-								<p><a href="#form" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 							</div>
+						</div>
+						<div class="desc">
+							<?php
+								echo "<h3>".$WhiteRock->name."</h3>";
+								echo "<p>".$WhiteRock->desc."</p>";
+							?>
+							<p><a href="#form" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 
@@ -313,7 +295,9 @@
 									<div class="col-md-6">
 										<span class="super-heading-sm">World Class Restaurant</span>
 										<h3 class="heading">Hotel Bliss</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<p>".$Bliss->restaurant."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<strong>7:00 AM - 10:00 PM</strong>
@@ -324,12 +308,16 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_1.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Spotlight->image." class='img-responsive' alt='Spotlight Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
 										<span class="super-heading-sm">Fine Dining</span>
 										<h3 class="heading">Spotlight Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<p>".$Spotlight->restaurant."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<strong>7:00 AM - 10:00 AM</strong>
@@ -349,7 +337,9 @@
 									<div class="col-md-6">
 										<span class="super-heading-sm">Buffet</span>
 										<h3 class="heading">The White Rock Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<p>".$WhiteRock->restaurant."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<strong>8:00 AM - 10:00 AM</strong>
