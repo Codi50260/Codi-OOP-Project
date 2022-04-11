@@ -200,7 +200,7 @@
 						</div>
 					</div>
 
-					<div class="feature-full-1col">
+					<div class="feature-full-1col" id="hotel">
 						<?php
 							$Spotlight = new Spotlight_Hotel();
 							echo "<div class='image' style='background-image: url(".$Spotlight->image.");'>";
@@ -286,21 +286,25 @@
 						</a>
 					</nav>
 					<div class="tab-content-container">
-						<div class="tab-content active show" data-tab-content="tab1">
+						<div class="tab-content active show" data-tab-content="tab1" id="restaurant">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_1.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Bliss->resImage." class='img-responsive' alt='Hotel Bliss Restaurant'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">World Class Restaurant</span>
-										<h3 class="heading">Hotel Bliss</h3>
 										<?php
+											echo "<span class='super-heading-sm'>".$Bliss->resType."</span>";
+											echo "<h3 class='heading'>".$Bliss->name."</h3>";
 											echo "<p>".$Bliss->restaurant."</p>";
 										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>7:00 AM - 10:00 PM</strong>
+											<?php
+												echo "<strong>".$Bliss->resHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -309,22 +313,20 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Spotlight->image." class='img-responsive' alt='Spotlight Hotel Image'>";
+											echo "<img src=".$Spotlight->resImage." class='img-responsive' alt='Spotlight Hotel Restaurant'>";
 										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Fine Dining</span>
-										<h3 class="heading">Spotlight Hotel</h3>
 										<?php
+											echo "<span class='super-heading-sm'>".$Spotlight->resType."</span>";
+											echo "<h3 class='heading'>".$Spotlight->name."</h3>";
 											echo "<p>".$Spotlight->restaurant."</p>";
 										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>7:00 AM - 10:00 AM</strong>
-											<br>
-											<strong>13:00 PM - 15:00 PM</strong>
-											<br>
-											<strong>18:00 PM - 21:00 PM</strong>
+											<?php
+												echo "<strong>".$Spotlight->resHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -332,39 +334,45 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_1.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$WhiteRock->resImage." class='img-responsive' alt='White Rock Hotel Restaurant'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Buffet</span>
-										<h3 class="heading">The White Rock Hotel</h3>
 										<?php
+											echo "<span class='super-heading-sm'>".$WhiteRock->resType."</span>";
+											echo "<h3 class='heading'>".$WhiteRock->name."</h3>";
 											echo "<p>".$WhiteRock->restaurant."</p>";
 										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>8:00 AM - 10:00 AM</strong>
-											<br>
-											<strong>13:00 PM - 15:00 PM</strong>
-											<br>
-											<strong>17:00 PM - 19:00 PM</strong>
+											<?php
+												echo "<strong>".$WhiteRock->resHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content" data-tab-content="tab2">
+						<div class="tab-content" data-tab-content="tab2" id="bar">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_2.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Bliss->barImage." class='img-responsive' alt='Bliss Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Formal Bar</span>
-										<h3 class="heading">Hotel Bliss</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Bliss->barType."</span>";
+											echo "<h3 class='heading'>".$Bliss->name."</h3>";
+											echo "<p>".$Bliss->bar."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>10:00 AM - 12:00 AM</strong>
+											<?php
+												echo "<strong>".$Bliss->barHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -372,15 +380,21 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_2.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Spotlight->barImage." class='img-responsive' alt='Spotlight Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Formal Bar</span>
-										<h3 class="heading">Spotlight Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Spotlight->barType."</span>";
+											echo "<h3 class='heading'>".$Spotlight->name."</h3>";
+											echo "<p>".$Spotlight->bar."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>16:00 PM - 10:00 PM</strong>
+											<?php
+												echo "<strong>".$Spotlight->barHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -388,51 +402,69 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_2.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$WhiteRock->barImage." class='img-responsive' alt='White Rock Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Pub</span>
-										<h3 class="heading">The White Rock Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$WhiteRock->barType."</span>";
+											echo "<h3 class='heading'>".$WhiteRock->name."</h3>";
+											echo "<p>".$WhiteRock->bar."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>10:00 AM - 10:00 PM</strong>
+											<?php
+												echo "<strong>".$WhiteRock->barHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content" data-tab-content="tab3">
+						<div class="tab-content" data-tab-content="tab3" id="parking">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_3.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Bliss->valetImage." class='img-responsive' alt='Bliss Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Valet Parking</span>
-										<h3 class="heading">Hotel Bliss</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Bliss->parkingType."</span>";
+											echo "<h3 class='heading'>".$Bliss->name."</h3>";
+											echo "<p>".$Bliss->parking."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>8:00 AM - 8:00 PM</strong>
+											<?php
+												echo "<strong>".$Bliss->parkingHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content" data-tab-content="tab4">
+						<div class="tab-content" data-tab-content="tab4" id="pool">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_4.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Bliss->poolImage." class='img-responsive' alt='Bliss Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Collection of Indoor Heated Pools</span>
-										<h3 class="heading">Hotel Bliss</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Bliss->poolType."</span>";
+											echo "<h3 class='heading'>".$Bliss->name."</h3>";
+											echo "<p>".$Bliss->pool."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>7:00 AM - 18:00 PM</strong>
+											<?php
+												echo "<strong>".$Bliss->poolHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -440,33 +472,45 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_4.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Spotlight->poolImage." class='img-responsive' alt='Spotlight Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Communal Pool</span>
-										<h3 class="heading">Spotlight Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Spotlight->poolType."</span>";
+											echo "<h3 class='heading'>".$Spotlight->name."</h3>";
+											echo "<p>".$Spotlight->pool."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>10:00 AM - 17:00 PM</strong>
+											<?php
+												echo "<strong>".$Spotlight->poolHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content" data-tab-content="tab5">
+						<div class="tab-content" data-tab-content="tab5" id="spa">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_5.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Bliss->spaImage." class='img-responsive' alt='Bliss Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Top 5 Best Masseuses and Masseurs</span>
-										<h3 class="heading">Hotel Bliss</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Bliss->spaType."</span>";
+											echo "<h3 class='heading'>".$Bliss->name."</h3>";
+											echo "<p>".$Bliss->spa."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>11:00 AM - 16:00 PM</strong>
+											<?php
+												echo "<strong>".$Bliss->spaHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -474,33 +518,45 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_5.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$WhiteRock->spaImage." class='img-responsive' alt='White Rock Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Qualified Massage Therapy</span>
-										<h3 class="heading">The White Rock Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$WhiteRock->spaType."</span>";
+											echo "<h3 class='heading'>".$WhiteRock->name."</h3>";
+											echo "<p>".$WhiteRock->spa."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>Appointment Only</strong>
+											<?php
+												echo "<strong>".$WhiteRock->spaHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-content" data-tab-content="tab6">
+						<div class="tab-content" data-tab-content="tab6" id="gym">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_6.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Bliss->gymImage." class='img-responsive' alt='Bliss Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Elite Trainers</span>
-										<h3 class="heading">Hotel Bliss</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Bliss->gymType."</span>";
+											echo "<h3 class='heading'>".$Bliss->name."</h3>";
+											echo "<p>".$Bliss->gym."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>8:00 AM - 8:00 PM</strong>
+											<?php
+												echo "<strong>".$Bliss->gymHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -508,15 +564,21 @@
 								<br>
 								<div class="row">
 									<div class="col-md-6">
-										<img src="images/tab_img_6.jpg" class="img-responsive" alt="Image">
+										<?php
+											echo "<img src=".$Spotlight->gymImage." class='img-responsive' alt='Spotlight Hotel Image'>";
+										?>
 									</div>
 									<div class="col-md-6">
-										<span class="super-heading-sm">Crossfit</span>
-										<h3 class="heading">Spotlight Hotel</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia perferendis modi impedit, rem quasi veritatis. Consectetur obcaecati incidunt, quae rerum, accusamus sapiente fuga vero at. Quia, labore, reprehenderit illum dolorem quae facilis reiciendis quas similique totam sequi ducimus temporibus ex nemo, omnis perferendis earum fugit impedit molestias animi vitae.</p>
+										<?php
+											echo "<span class='super-heading-sm'>".$Spotlight->gymType."</span>";
+											echo "<h3 class='heading'>".$Spotlight->name."</h3>";
+											echo "<p>".$Spotlight->gym."</p>";
+										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
-											<strong>Appointment Only</strong>
+											<?php
+												echo "<strong>".$Spotlight->gymHour."</strong>";
+											?>
 										</p>
 									</div>
 								</div>
@@ -579,7 +641,7 @@
 								<h3>Company</h3>
 								<ul class="link">
 									<li><a href="#">About Us</a></li>
-									<li><a href="#">Hotels</a></li>
+									<li><a href="#hotel">Hotels</a></li>
 									<li><a href="#">Customer Care</a></li>
 									<li><a href="#">Contact Us</a></li>
 								</ul>
@@ -587,17 +649,17 @@
 							<div class="col-md-3">
 								<h3>Our Facilities</h3>
 								<ul class="link">
-									<li><a href="#">Resturant</a></li>
-									<li><a href="#">Bars</a></li>
-									<li><a href="#">Pick-up / Drop-Off</a></li>
-									<li><a href="#">Swimming Pool</a></li>
-									<li><a href="#">Spa</a></li>
-									<li><a href="#">Gym</a></li>
+									<li><a href="#resturant">Resturant</a></li>
+									<li><a href="#bar">Bars</a></li>
+									<li><a href="#parking">Pick-up / Drop-Off</a></li>
+									<li><a href="#pool">Swimming Pool</a></li>
+									<li><a href="#spa">Spa</a></li>
+									<li><a href="#gym">Gym</a></li>
 								</ul>
 							</div>
 							<div class="col-md-6">
 								<h3>Subscribe</h3>
-								<p>Sed cursus ut nibh in semper. Mauris varius et magna in fermentum. </p>
+								<p>Subscribe to hear more about us and receive our newspapers. </p>
 								<form action="#" id="form-subscribe">
 									<div class="form-field">
 										<input type="email" placeholder="Email Address" id="email">
