@@ -1,4 +1,23 @@
-<?php require 'classes.php'?>
+<?php require 'classes.php';
+
+if ($_POST) {
+	if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
+		$hotel = new The_White_Rock_Hotel();
+	} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
+		$hotel = new Spotlight_Hotel();
+	} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
+		$hotel = new Hotel_Bliss();
+	}
+
+	if ($_POST['Hotel_Name_2'] == 'The White Rock Hotel') {
+		$hotel2 = new The_White_Rock_Hotel();
+	} else if ($_POST['Hotel_Name_2'] == 'Spotlight Hotel') {
+		$hotel2 = new Spotlight_Hotel();
+	} else if ($_POST['Hotel_Name_2'] == 'Hotel Bliss') {
+		$hotel2 = new Hotel_Bliss();
+	}
+}
+?>
 <html class="no-js">
 	<head>
 	<meta charset="utf-8">
@@ -82,56 +101,50 @@
 			</div>
 		</div>
 	</div>
-	
-	<?php
-		if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
-			$hotel = new The_White_Rock_Hotel();
-		} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
-			$hotel = new Spotlight_Hotel();
-		} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
-			$hotel = new Hotel_Bliss();
-		}
 
-		if ($_POST['Hotel_Name_2'] == 'The White Rock Hotel') {
-			$hotel2 = new The_White_Rock_Hotel();
-		} else if ($_POST['Hotel_Name_2'] == 'Spotlight Hotel') {
-			$hotel2 = new Spotlight_Hotel();
-		} else if ($_POST['Hotel_Name_2'] == 'Hotel Bliss') {
-			$hotel2 = new Hotel_Bliss();
-		}
-	?>
-	<form method="post" action="compare.php">
+	<form method="post" action="compare.php" name="fom">
 		<div id="fh5co-contact-section">
 			<div class="row">
 				<div class="col-md-6">
 					<?php
+					if ($_POST) {
 						echo "<div class='fh5co-map'><img src=".$hotel->image." alt=".$_POST['Hotel_Name']." style='max-width:100%; max-height:100%; object-fit: contain'></div>";
+					}
 					?>
 				</div>
 				<div class="col-md-6">
 					<div class="col-md-12">
 						<?php
+						if ($_POST) {
 							echo "<h3>".$_POST['Hotel_Name']."</h3>";
 							echo "<p>".$hotel->desc."</p>";
+						}
 						?>
 						<ul class="contact-info">
 							<?php
+							if ($_POST) {
 								echo "<li><i class='ti-home'></i>".$hotel->location."</li>";
 								echo "<li><i class='ti-money'></i> $".$hotel->rate." per day"."</li>";
 								echo "<li><i class='ti-star'></i>".$hotel->review."</li>";
 								echo "<li><i class='ti-medall'></i>".$hotel->facilities."</li>";
+							}
 							?>
 						</ul>
 					</div>
 					<div class="col-md-12">
 						<div class="row">
+							<?php
+							if (!$_POST) {
+								echo "Please select Hotel 1 to compare";
+							}
+							?>
 							<div class="col-md-12">
 								<div class="form-group">
 									<section>
 										<br>
-										<select name='Hotel_Name'>
+										<select name='Hotel_Name' style="width: 15%; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required >
 											<option value="" disabled selected>Select Hotel</option>
-											<option value="The White Rock Hotel" selected="selected">The White Rock Hotel</option>
+											<option value="The White Rock Hotel">The White Rock Hotel</option>
 											<option value="Spotlight Hotel">Spotlight Hotel</option>
 											<option value="Hotel Bliss">Hotel Bliss</option>
 										</select>
@@ -144,38 +157,55 @@
 			</div>
 		</div>
 
+		<?php
+		if ($_POST) {
+			echo '<h1 style="text-align: center; text-decoration: underline;">OR</h1>';
+		}
+		?>
+
 		<div id="fh5co-contact-section">
 			<div class="row">
 				<div class="col-md-6">
 					<?php
+					if ($_POST) {
 						echo "<div class='fh5co-map'><img src=".$hotel2->image." alt=".$_POST['Hotel_Name']." style='max-width:100%; max-height:100%; object-fit: contain'></div>";
+					}
 					?>
 				</div>
 				<div class="col-md-6">
 					<div class="col-md-12">
 						<?php
+						if ($_POST) {
 							echo "<h3>".$_POST['Hotel_Name_2']."</h3>";
 							echo "<p>".$hotel2->desc."</p>";
+						}
 						?>
 						<ul class="contact-info">
 							<?php
+							if ($_POST) {
 								echo "<li><i class='ti-home'></i>".$hotel2->location."</li>";
 								echo "<li><i class='ti-money'></i> $".$hotel2->rate." per day"."</li>";
 								echo "<li><i class='ti-star'></i>".$hotel2->review."</li>";
 								echo "<li><i class='ti-medall'></i>".$hotel2->facilities."</li>";
+							}
 							?>
 						</ul>
 					</div>
 					<div class="col-md-12">
 						<div class="row">
+							<?php
+							if (!$_POST) {
+								echo "Please select Hotel 2 to compare";
+							}
+							?>
 							<div class="col-md-12">
 								<div class="form-group">
 									<section>
 										<br>
-										<select name='Hotel_Name_2'>
+										<select name='Hotel_Name_2' style="width: 15%; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required>
 											<option value="" disabled selected>Select Hotel</option>
 											<option value="The White Rock Hotel">The White Rock Hotel</option>
-											<option value="Spotlight Hotel" selected="selected">Spotlight Hotel</option>
+											<option value="Spotlight Hotel">Spotlight Hotel</option>
 											<option value="Hotel Bliss">Hotel Bliss</option>
 										</select>
 									</section>
@@ -186,7 +216,9 @@
 				</div>
 			</div>
 		</div>
-		<input type="submit" value="View Hotels">
+		<div style="text-align:center">
+			<input type="submit" value="Compare Hotels" name="click" style="width: 15%; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #6e6c69; color: white">
+		</div>
 	</form>
 
 	<footer id="footer" class="fh5co-bg-color">
@@ -194,8 +226,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="copyright">
-						<p><small>&copy; 2016 Free HTML5 Template. <br> All Rights Reserved. <br>
-						Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> <br> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small></p>
+						<p><small>&copy; Codi de Faria's OOP Project. <br> All Rights Reserved. <br>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -214,7 +245,7 @@
 							<ul class="link">
 								<li><a href="#">Resturant</a></li>
 								<li><a href="#">Bars</a></li>
-								<li><a href="#">Pick-up</a></li>
+								<li><a href="#">Pick-up / Drop-Off</a></li>
 								<li><a href="#">Swimming Pool</a></li>
 								<li><a href="#">Spa</a></li>
 								<li><a href="#">Gym</a></li>
@@ -222,7 +253,7 @@
 						</div>
 						<div class="col-md-6">
 							<h3>Subscribe</h3>
-							<p>Sed cursus ut nibh in semper. Mauris varius et magna in fermentum. </p>
+							<p>Subscribe to hear more about us and receive our newspapers. </p>
 							<form action="#" id="form-subscribe">
 								<div class="form-field">
 									<input type="email" placeholder="Email Address" id="email">
@@ -261,8 +292,6 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- Stellar Parallax -->
 	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Owl Slider -->
-	<!-- // <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Date Picker -->
 	<script src="js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
@@ -270,15 +299,6 @@
 	<script src="js/selectFx.js"></script>
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
-
 	<script src="js/custom.js"></script>
-	<script>
-		var select = document.getElementById('Hotel_Name');
-		var value = select.options[select.selectedIndex].value;
-		console.log(value);
-	</script>
-
-</body>
+	</body>
+</html>
