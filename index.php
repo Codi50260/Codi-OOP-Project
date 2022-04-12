@@ -30,7 +30,7 @@
 
 	</head>
 	<body>
-		<div id="fh5co-wrapper">
+		<!-- <div id="fh5co-wrapper"> -->
 		<div id="fh5co-page">
 		<div id="fh5co-header">
 			<header id="fh5co-header-section">
@@ -48,64 +48,20 @@
 					</div>
 				</div>
 			</header>
-			
 		</div>
-		<!-- end:fh5co-header -->
-		<aside id="fh5co-hero" class="js-fullheight">
-			<div class="flexslider js-fullheight">
-				<ul class="slides">
-				<li id=img style="background-image: url(images/slider1.jpg);">
-					<div class="overlay-gradient"></div>
-					<div class="container">
-						<div class="col-md-12 col-md-offset-0 text-center slider-text">
-							<div class="slider-text-inner js-fullheight">
-								<div class="desc">
-									<p><span>The White Rock Hotel</span></p>
-									<h2>Reserve Room for Family Vacation</h2>
-									<p>
-										<a href="#" class="btn btn-primary btn-lg">Book Now</a>
-									</p>
-								</div>
-							</div>
+		<div class="fh5co-parallax" style="background-image: url(images/slider3.jpg); height: 100%" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+						<div class="fh5co-intro fh5co-table-cell">
+							<h1 class="text-center" style="font-family: Geomanist">Find your own (s)pace</h1>
+							<p>Make yourself right at home, open spaces, modern facilities and fully-equipped hotels are yours for the taking. Whether you stay to dream, dine, or dance, there is always something here for you.</a></p>
 						</div>
 					</div>
-				</li>
-				<li id=img style="background-image: url(images/slider2.jpg);">
-					<div class="overlay-gradient"></div>
-					<div class="container">
-						<div class="col-md-12 col-md-offset-0 text-center slider-text">
-							<div class="slider-text-inner js-fullheight">
-								<div class="desc">
-									<p><span>Spotlight Hotel</span></p>
-									<h2>Make Your Vacation Comfortable</h2>
-									<p>
-										<a href="#" class="btn btn-primary btn-lg">Book Now</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li id=img style="background-image: url(images/slider3.jpg);">
-					<div class="overlay-gradient"></div>
-					<div class="container">
-						<div class="col-md-12 col-md-offset-0 text-center slider-text">
-							<div class="slider-text-inner js-fullheight">
-								<div class="desc">
-									<p><span>Hotel Bliss</span></p>
-									<h2>A Best Place To Enjoy Your Life</h2>
-									<p>
-										<a href="#" class="btn btn-primary btn-lg">Book Now</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				
-				</ul>
+				</div>
 			</div>
-		</aside>
+		</div>
 		<div class="wrap" id="form">
 			<div class="container">
 				<div class="row">
@@ -291,7 +247,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Bliss->resImage." class='img-responsive' alt='Hotel Bliss Restaurant'>";
+											echo "<img src=".$Bliss->resImage." class='img' alt='Hotel Bliss Restaurant' style='max-width:100%; max-height:100%; object-fit: cover'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -313,7 +269,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Spotlight->resImage." class='img-responsive' alt='Spotlight Hotel Restaurant'>";
+											echo "<img src=".$Spotlight->resImage." class='img' alt='Spotlight Hotel Restaurant' style='max-width:100%; max-height:100%; object-fit: cover'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -335,7 +291,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$WhiteRock->resImage." class='img-responsive' alt='White Rock Hotel Restaurant'>";
+											echo "<img src=".$WhiteRock->resImage." class='img' alt='White Rock Hotel Restaurant' style='max-width:100%; max-height:100%; object-fit: cover'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -359,7 +315,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Bliss->barImage." class='img-responsive' alt='Bliss Hotel Image'>";
+											echo "<img src=".$Bliss->barImage." class='img' alt='Bliss Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -381,7 +337,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Spotlight->barImage." class='img-responsive' alt='Spotlight Hotel Image'>";
+											echo "<img src=".$Spotlight->barImage." class='img' alt='Spotlight Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -403,7 +359,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$WhiteRock->barImage." class='img-responsive' alt='White Rock Hotel Image'>";
+											echo "<img src=".$WhiteRock->barImage." class='img' alt='White Rock Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -427,7 +383,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Bliss->valetImage." class='img-responsive' alt='Bliss Hotel Image'>";
+											echo "<img src=".$Bliss->valetImage." class='img' alt='Bliss Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -451,7 +407,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Bliss->poolImage." class='img-responsive' alt='Bliss Hotel Image'>";
+											echo "<img src=".$Bliss->poolImage." class='img' alt='Bliss Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -473,7 +429,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Spotlight->poolImage." class='img-responsive' alt='Spotlight Hotel Image'>";
+											echo "<img src=".$Spotlight->poolImage." class='img' alt='Spotlight Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -497,7 +453,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Bliss->spaImage." class='img-responsive' alt='Bliss Hotel Image'>";
+											echo "<img src=".$Bliss->spaImage." class='img' alt='Bliss Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -519,7 +475,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$WhiteRock->spaImage." class='img-responsive' alt='White Rock Hotel Image'>";
+											echo "<img src=".$WhiteRock->spaImage." class='img' alt='White Rock Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -543,7 +499,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Bliss->gymImage." class='img-responsive' alt='Bliss Hotel Image'>";
+											echo "<img src=".$Bliss->gymImage." class='img' alt='Bliss Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
@@ -565,7 +521,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$Spotlight->gymImage." class='img-responsive' alt='Spotlight Hotel Image'>";
+											echo "<img src=".$Spotlight->gymImage." class='img' alt='Spotlight Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
