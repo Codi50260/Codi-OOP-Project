@@ -13,10 +13,10 @@ class The_White_Rock_Hotel {
     public $restaurant = "Here we believe in a good start to the day, which is why here a rushed breakfast, lunch or dinner is unheard of. You can enjoy our buffet of wholesome, good quality food which will give you a nutritious boost, to enjoy your day outdoors with just the right amount of energy.";
 	public $resHour = "8:00 AM - 12:00 PM <br> 17:00 PM - 21:00 PM";
 	public $resType = "Buffet";
-	public $bar = "White Rock Hotel Bar.";
+	public $bar = "We have a lovely old pub with wood panelling, a mezzanine bar and wooden barrels over the bar. The famous Pieter Hoppe opened his liqueur distillery here in around 1780 and the premises has been serving jenever and beers here ever since.";
 	public $barHour = "10:00 AM - 10:00 PM";
 	public $barType = "Pub";
-	public $spa = "White Rock Spa.";
+	public $spa = "Designed with you in mind, our relaxing and soothing treatment rooms will whisk you away from the everyday.";
 	public $spaHour = "Appointment Only";
 	public $spaType = "Qualified Massage Therapy";
 }
@@ -36,13 +36,13 @@ class Spotlight_Hotel {
 	public $restaurant = "Are you looking for an unforgettable culinary experience? Spotlight Hotel has an extraordinary dining experience for you. At the Chef's Table, you are overlooking the heart of the kitchen Arjan Speelman. While the chefs prepare the dishes in the utmost concentration, you will not miss out on the breathtaking view or the excellent service that we have to offer you.";
 	public $resHour = "7:00 AM - 10:00 AM <br> 13:00 PM - 15:00 PM <br> 18:00 PM - 21:00 PM";
 	public $resType = "Fine Dining";
-	public $bar = "Spotlight Hotel Bar.";
+	public $bar = "You will find a vibrant spot here, filled with culture and taste. At daytime, we offer you the best spot for appointments, meetings or a little catch-up. However, as the sun sets and the volume goes up, our DJs and cocktail shakers turn it into an energetic lounge bar.";
 	public $barHour = "16:00 PM - 10:00 PM";
 	public $barType = "Formal Bar";
-	public $pool = "Spotlight Hotel Pool.";
+	public $pool = "This is a spacious and tranquil urban retreat, where visitors can enjoy a dazzling indoor communal pool which is maintained at the highest level.";
 	public $poolHour = "10:00 AM - 17:00 PM";
 	public $poolType = "Communal Indoor Pool";
-	public $gym = "Spotlight Hotel Gym.";
+	public $gym = "All the best for your Well-Being. The modern gym at Mercure Hotel Amsterdam West offers everything, that you could need for your mental and physical wellbeing.";
 	public $gymHour = "Appointment Only";
 	public $gymType = "Crossfit";
 }
@@ -64,19 +64,19 @@ class Hotel_Bliss {
     public $restaurant = "Hotel Bliss offers elegant yet accessible cuisine that builds on products at their best. Together with the characteristic acids and spices of Jacob Jan Boerma, they give substance to the illusion of white. Recognizable flavors return in an unexpected way.";
 	public $resHour = "7:00 AM - 10:00 PM";
 	public $resType = "World Class Restaurant";
-	public $bar = "Hotel Bliss Bar.";
+	public $bar = "The Lobby stands for good food, nice drinks and undiluted 'gezelligheid'. This is where the best city vibes come together at the bar, at the table, on your plate and in your glass. Service is our priority, and our people are happy to help you. So that you can be completely yourself.";
 	public $barHour = "10:00 AM - 12:00 AM";
 	public $barType = "Formal Bar";
-	public $parking = "Hotel Bliss Pick-Up / Drop-Off.";
+	public $parking = "Hotel Bliss offers a professional valet company to relieve you of the hassle of parking your vehicle on arrival, your vehicle will be transferred to safe and secured underground parking five minutes walk from the hotel. ";
 	public $parkingHour = "8:00 AM - 8:00 PM";
 	public $parkingType = "Valet Parking";
-	public $pool = "Hotel Bliss Pool.";
+	public $pool = "Swim from the heated indoor pool right into the open air and float around and observe the beautiful views. You can fully relax and enjoy the warm, soothing water in our 20-meter pool. Swimming is good for the muscles and contributes to a healthy blood circulation.";
 	public $poolHour = "7:00 AM - 18:00 PM";
 	public $poolType = "Collection of Indoor and Outdoor Heated Pools";
-	public $spa = "Hotel Bliss Spa.";
+	public $spa = "Welcome to an escape within an escape, where we take you from the everyday life into an insider scene of surprising sensations. Find your balance, boost your stamina and relax. We have you covered.";
 	public $spaHour = "11:00 AM - 16:00 PM";
 	public $spaType = "Top 5 Best Masseuses and Masseurs";
-	public $gym = "Hotel Bliss Gym.";
+	public $gym = "All hotel guests are welcome at our gym. Our fitness equipment complies with the latest health regulations and is easy to use. Here you will find various cardio equipment, including a cross trainer and treadmill.";
 	public $gymHour = "8:00 AM - 8:00 PM";
 	public $gymType = "Elite Trainers";
 }
