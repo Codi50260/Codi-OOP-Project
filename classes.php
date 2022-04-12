@@ -26,10 +26,10 @@ class Spotlight_Hotel {
 	public $location = "Panepistimiou 52, Greece";
 	public $review = "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>";
 	public $image = "images/hotels/Spotlight_Hotel.webp";
-	public $resImage = "images/Spotlight_Restaurant.jpg";
+	public $resImage = "images/Spotlight_Restaurant_2_.jpg";
 	public $barImage = "images/Spotlight_Bar.jpeg";
-	public $poolImage = "images/Spotlight_Pool.jpg";
-	public $gymImage = "images/Spotlight_Gym.jpg";
+	public $poolImage = "images/Spotlight_Pool_2.jpg";
+	public $gymImage = "images/Spotlight_Gym_2.jpg";
 	public $rate = 100;
 	public $facilities = 'Restaurant , Bar , Swimming pool , Gym';
 	public $desc = "The Spotlight Hotel is located in the heart of the Historical Center of Athens and has recently been renovated. It's surrounded by the most important monuments of the Grecian History, such as the Acropolis, the New Museum of Acropolis, the Parliament, the Archaeological Museum, and the National Library. It's located within short distance to theaters, modern commercial shops and city malls, offering its guests a wide variety of sightseeing and entertainment choices.";
@@ -52,12 +52,12 @@ class Hotel_Bliss {
 	public $location = "Via Aurelia 738, Italy";
 	public $review = "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>";
 	public $image = "images/hotels/Hotel_Bliss.jpg";
-	public $resImage = "images/Bliss_Restaurant.jpg";
+	public $resImage = "images/Bliss_Restaurant_2.jpg";
 	public $barImage = "images/Bliss_Bar.jpg";
 	public $valetImage = "images/Bliss_Valet.jpg";
 	public $poolImage = "images/Bliss_Pool.webp";
 	public $spaImage = "images/Bliss_Spa.jpg";
-	public $gymImage = "images/Bliss_Gym.webp";
+	public $gymImage = "images/Bliss_Gym.jpg";
 	public $rate = 140;
 	public $facilities = 'Restaurant , Bar , Pick-up / Drop-off , Swimming pool , Spa , Gym';
 	public $desc = "Hotel Bliss is strategically located, less than 3 km away from Vatican City. Well connected by public transport. Decorated & furnished in a modern elegant style, our rooms and facilities are fresh & stylish, yet maintaining a coziness & warmth that are essential to us. Extra comfort is guaranteed by our hi-speed Wi-Fi, satellite HD LCD TVs, sound-proof double windows, and other facilities.";
