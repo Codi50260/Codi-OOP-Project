@@ -42,7 +42,7 @@ class Spotlight_Hotel {
 	public $pool = "This is a spacious and tranquil urban retreat, where visitors can enjoy a dazzling indoor communal pool which is maintained at the highest level.";
 	public $poolHour = "10:00 AM - 17:00 PM";
 	public $poolType = "Communal Indoor Pool";
-	public $gym = "All the best for your Well-Being. The modern gym at Mercure Hotel Amsterdam West offers everything, that you could need for your mental and physical wellbeing.";
+	public $gym = "All the best for your Well-Being. The modern gym at Spotlight Hotel offers everything, that you could need for your mental and physical wellbeing.";
 	public $gymHour = "Appointment Only";
 	public $gymType = "Crossfit";
 }
