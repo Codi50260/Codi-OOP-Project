@@ -27,6 +27,44 @@
 		<link rel="stylesheet" href="css/style.css">
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script>
+			function dateCheck() {
+				var x = document.getElementById("date-start").value;
+				var y = document.getElementById("date-end").value;
+
+				if (y>x){
+					document.getElementById("tooltiptext").style.visibility = "hidden";
+					return true;
+				} else{
+					document.getElementById("tooltiptext").style.visibility = "visible";
+					return false;
+				}
+			}
+			function selectHotel() {
+				var x = document.getElementById("optHotel").value;
+
+				if (x == ""){
+					document.getElementById("tooltiptext2").style.visibility = "visible";
+					return false;
+				} else{
+					document.getElementById("tooltiptext2").style.visibility = "hidden";
+					return true;
+				}
+			}
+			function validate() {
+				bool = false
+				selectHotel();
+				dateCheck();
+
+				if (selectHotel() && dateCheck()){
+					bool = true
+				};
+
+				if (bool === true){
+					document.getElementById("subForm").submit();
+				}
+			}
+		</script>
 
 	</head>
 	<body>
@@ -65,11 +103,14 @@
 		<div class="wrap" id="form">
 			<div class="container">
 				<div class="row">
-					<div id="availability">
-						<form action="confirm.php" method="post">
+					<div
+					 id="availability">
+					 	<span id="tooltiptext2" style="visibility: hidden;width: 300px;background-color: red;color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;bottom: 100%;left: 150px;margin-left: -60px;">No Hotel selected, Please try again</span>
+						<span id="tooltiptext" style="visibility: hidden;width: 300px;background-color: red;color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;bottom: 100%;left: 50%;margin-left: -60px;">Invalid date, Please try again</span>
+						<form action="confirm.php" method="post" id="subForm">
 							<div class="a-col">
 								<section>
-									<select class="cs-select cs-skin-border" name='Hotel_Name' required>
+									<select class="cs-select cs-skin-border" name='Hotel_Name' id="optHotel" required>
 										<option value="" disabled selected>Select Hotel</option>
 										<option value="The White Rock Hotel">The White Rock Hotel</option>
 										<option value="Spotlight Hotel">Spotlight Hotel</option>
@@ -89,11 +130,11 @@
 									<input type="text" class="form-control" id="date-end" name='CheckOut' required/>
 								</div>
 							</div>
-							<div class="a-col action">
-								<button type="button" onclick="window.location.href='compare.php'" style="background-color: #6e6c69; color: white" >Compare Hotels</button>
+							<div class="a-col">
+								<p><a href="compare.php" class="btn btn-primary btn-luxe-primary">Compare Hotels<i class="ti-angle-right"></i></a></p>
 							</div>
-							<div class="a-col action">
-								<button type="submit" style="background-color: #6e6c69; color: white">Check Availability</button>
+							<div class="a-col">
+								<p><button type="button" onclick="validate()" class="btn btn-primary btn-luxe-primary" id="lala">Book Hotel<i class="ti-angle-right"></i></button></p>
 							</div>
 						</form>
 					</div>
