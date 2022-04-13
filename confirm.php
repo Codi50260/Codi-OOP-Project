@@ -1,17 +1,17 @@
 <?php require 'classes.php';
 
-function dateDiffInDays($date1, $date2) 
-{
-	// Calculating the difference in timestamps
-	$diff = strtotime($date2) - strtotime($date1);
-
-	if ($diff > 0) {
-		return abs(round($diff / 86400));
-	} else {
-		echo "Invalid dates, please return and correct error";
-		return False;
-	}
+function difference() {
+	$dateOut = $_POST["CheckOut"];
+	$dateIn = $_POST["CheckIn"];
+	$your_date1 = date("Y-m-d", strtotime($dateOut));
+	$your_date2 = date("Y-m-d", strtotime($dateIn));
+	$now = strtotime($your_date1);
+	$your_date = strtotime($your_date2);
+	$datediff2 = $now - $your_date;
+	$datediff = round($datediff2 / (60 * 60 * 24));
+	return $datediff;
 }
+
 ?>
 <html class="no-js">
 	<head>
@@ -124,9 +124,9 @@ function dateDiffInDays($date1, $date2)
 							<p>
 								<label for="numdays" id="formText">Number of Days:</label>
 								<?php
-								$dateDiff = dateDiffInDays($_POST["CheckIn"], $_POST["CheckOut"]);
-								echo "<br>".$dateDiff;
-								echo "<br>Total cost: $".$hotel->rate * $dateDiff;
+								$datediff = difference();
+								echo "<br>".$datediff;
+								echo "<br>Total cost: $".$hotel->rate * $datediff;
 								?>
 							</p>
 							<p>
@@ -154,11 +154,7 @@ function dateDiffInDays($date1, $date2)
 								<label for="email" id="formText">Email Address:</label>
 								<input type="email" name="email" style="color: dimgray;" onclick="this.value=''" required>
 							</p>
-							<?php
-							if ($dateDiff != FALSE) {
-								echo "<input type='submit' value='Book'>";
-							}
-							?>
+							<input type='submit' value='Book'>
 						</form>
 						<form method="get" action="index.php">
 							<input type="submit" value="Cancel">
