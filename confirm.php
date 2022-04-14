@@ -42,7 +42,6 @@ function difference() {
 	<!-- CS Select -->
 	<link rel="stylesheet" href="css/cs-select.css">
 	<link rel="stylesheet" href="css/cs-skin-border.css">
-
 	<!-- Themify Icons -->
 	<link rel="stylesheet" href="css/themify-icons.css">
 	<!-- Flat Icon -->
@@ -51,10 +50,10 @@ function difference() {
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="css/flexslider.css">
-	
+	<!-- Star Rating -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
-
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
@@ -94,72 +93,71 @@ function difference() {
 			</div>
 		</div>
 	</div>
+	<br>
 
+	<div class="feature-full-1col" id="hotel">
+		<?php
+		if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
+			$hotel = new The_White_Rock_Hotel();
+		} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
+			$hotel = new Spotlight_Hotel();
+		} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
+			$hotel = new Hotel_Bliss();
+		}
+			echo "<div class='image' style='background-image: url(".$hotel->image.");'>";
+		?>
+		<div class="descrip text-center">
+			<?php
+				echo "<p><span>$".$hotel->rate."/day</span></p>";
+			?>
+		</div>
+		</div>
+		<div class="desc">
+			<h3>
+				<?php echo $hotel->name;?>
+			</h3>
+			<ul class="contact-info">
+				<li><i class='ti-pin'></i><?php echo $hotel->location ?></li>
+				<li><i class='ti-star'></i><?php echo $hotel->review ?></li>
+				<li><i class='ti-world'></i><?php echo $hotel->facilities ?></li>
+				<li><i class='ti-time'></i> Number of Days: <?php $datediff = difference(); echo $datediff ?></li>
+				<li><i class='ti-thumb-up'></i> Check In: <?php echo $_POST["CheckIn"] ?></li>
+				<li><i class='ti-thumb-down'></i> Check Out: <?php echo $_POST["CheckOut"] ?></li>
+				<li><i class='ti-money'></i> Total Cost: $<?php echo $hotel->rate * $datediff ?></li>
+			</ul>
+		</div>
+	</div>
 
-	<div id="fh5co-services-section">
+	<div class="wrap" id="form">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
-					<div class="services">
-						<span><i class="ti-home"></i></span>
-						<div class="desc">
-							<h3>Booking for Hotel:</h3>
+				<div id="availability">
+					<form action="thanks.php" method="post">
+						<div class="a-col">
+							<div class="input-field_2">
+								<label for="name">Name</label>
+								<input type="text" class="form-control" id="name" name="name" required/>
+							</div>
 						</div>
-						<br>
-						<form method="post" action="thanks.php">
-							<p>
-								<label for="hotel" id="formText">Hotel chosen:</label>
-								<?php
-								if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
-									$hotel = new The_White_Rock_Hotel();
-								} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
-									$hotel = new Spotlight_Hotel();
-								} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
-									$hotel = new Hotel_Bliss();
-								}
-								echo "<br>".$_POST['Hotel_Name'];
-								echo "<br>Daily rate: $".$hotel->rate;
-								?>
-							</p>
-							<p>
-								<label for="numdays" id="formText">Number of Days:</label>
-								<?php
-								$datediff = difference();
-								echo "<br>".$datediff;
-								echo "<br>Total cost: $".$hotel->rate * $datediff;
-								?>
-							</p>
-							<p>
-								<label for="checkIn" id="formText">Check in:</label>
-								<?php
-								echo $_POST["CheckIn"];
-								?>
-							</p>
-							<p>
-								<label for="checkOut" id="formText">Check out:</label>
-								<?php
-								echo $_POST["CheckOut"];
-								?>
-							</p>
-							<h3>Please fill in the details below to complete booking</h3>
-							<p>
-								<label for="name" id="formText">First Name:</label>
-								<input type="text" name="name" style="color: dimgray;" onclick="this.value=''" required>
-							</p>
-							<p>
-								<label for="surname" id="formText">Surname:</label>
-								<input type="text" name="surname" style="color: dimgray;" onclick="this.value=''" required>
-							</p>
-							<p>
-								<label for="email" id="formText">Email Address:</label>
-								<input type="email" name="email" style="color: dimgray;" onclick="this.value=''" required>
-							</p>
-							<input type='submit' value='Book'>
-						</form>
-						<form method="get" action="index.php">
-							<input type="submit" value="Cancel">
-						</form>
-					</div>
+						<div class="a-col">
+							<div class="input-field_2">
+								<label for="surname">Surname</label>
+								<input type="text" class="form-control" id="surname" name="surname" required/>
+							</div>
+						</div>
+						<div class="a-col">
+							<div class="input-field_2">
+								<label for="email">Email</label>
+								<input type="email" class="form-control" id="email" name="email" required/>
+							</div>
+						</div>
+						<div class="a-col" style="">
+							<p><button type="submit" class="btn btn-primary btn-luxe-primary">Confirm Booking<i class="ti-angle-right"></i></button></p>
+						</div>
+						<div class="a-col">
+						<p><button type="button" onclick="window.location.href='index.php'" class="btn btn-primary btn-luxe-primary">Cancel<i class="ti-angle-right"></i></button></p>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -197,7 +195,7 @@ function difference() {
 						</div>
 						<div class="col-md-6">
 							<h3>Subscribe</h3>
-							<p>Sed cursus ut nibh in semper. Mauris varius et magna in fermentum. </p>
+							<p>Subscribe to hear more about us and receive our newspapers. </p>
 							<form action="#" id="form-subscribe">
 								<div class="form-field">
 									<input type="email" placeholder="Email Address" id="email">
