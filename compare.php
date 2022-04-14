@@ -1,16 +1,16 @@
 <?php require 'classes.php';
 
 if ($_POST) {
-	if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
-		$hotel = new The_White_Rock_Hotel();
+	if ($_POST['Hotel_Name'] == 'Prestige Hotel') {
+		$hotel = new Prestige_Hotel();
 	} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
 		$hotel = new Spotlight_Hotel();
 	} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
 		$hotel = new Hotel_Bliss();
 	}
 
-	if ($_POST['Hotel_Name_2'] == 'The White Rock Hotel') {
-		$hotel2 = new The_White_Rock_Hotel();
+	if ($_POST['Hotel_Name_2'] == 'Prestige Hotel') {
+		$hotel2 = new Prestige_Hotel();
 	} else if ($_POST['Hotel_Name_2'] == 'Spotlight Hotel') {
 		$hotel2 = new Spotlight_Hotel();
 	} else if ($_POST['Hotel_Name_2'] == 'Hotel Bliss') {
@@ -38,7 +38,6 @@ if ($_POST) {
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
-
 	<!-- Stylesheets -->
 	<!-- Dropdown Menu -->
 	<link rel="stylesheet" href="css/superfish.css">
@@ -47,7 +46,6 @@ if ($_POST) {
 	<!-- CS Select -->
 	<link rel="stylesheet" href="css/cs-select.css">
 	<link rel="stylesheet" href="css/cs-skin-border.css">
-
 	<!-- Themify Icons -->
 	<link rel="stylesheet" href="css/themify-icons.css">
 	<!-- Flat Icon -->
@@ -58,10 +56,8 @@ if ($_POST) {
 	<link rel="stylesheet" href="css/flexslider.css">
 	<!-- Star Rating -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
-
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
@@ -74,7 +70,6 @@ if ($_POST) {
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.php">Codi's Booking App</a></h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li><a href="index.php">Home</a></li>
@@ -82,20 +77,19 @@ if ($_POST) {
 							<li><a href="#">Confirmation</a></li>
 						</ul>
 					</nav>
-				</div>
+				</div> 
 			</div>
 		</header>
 		
 	</div>
 	<!-- end:fh5co-header -->
-	<div class="fh5co-parallax" style="background-image: url(images/slider1.jpg);" data-stellar-background-ratio="0.5">
+	<div class="fh5co-parallax" style="background-image: url(images/background_compare.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
-						<h1 class="text-center">Compare Hotels</h1>
-						<p>Select which hotels you would like to compare against</a></p>
+						<h1 class="text-center">Comparing of Hotels</h1>
 					</div>
 				</div>
 			</div>
@@ -108,7 +102,9 @@ if ($_POST) {
 				<div class="col-md-6">
 					<?php
 					if ($_POST) {
-						echo "<div class='fh5co-map'><img src=".$hotel->image." alt=".$_POST['Hotel_Name']." style='max-width:100%; max-height:100%; object-fit: contain'></div>";
+						echo "<div class='fh5co-map'><img src=".$hotel->image." alt=".$_POST['Hotel_Name']." style='width:100%; max-height:100%; object-fit: contain'></div>";
+					} else {
+					echo "<div class='fh5co-map'><img src='images/compare_image1.jpg' alt='background pic' style='width:100%; max-height:100%; object-fit: contain'></div>";
 					}
 					?>
 				</div>
@@ -123,10 +119,10 @@ if ($_POST) {
 						<ul class="contact-info">
 							<?php
 							if ($_POST) {
-								echo "<li><i class='ti-home'></i>".$hotel->location."</li>";
+								echo "<li><i class='ti-pin'></i>".$hotel->location."</li>";
 								echo "<li><i class='ti-money'></i> $".$hotel->rate." per day"."</li>";
 								echo "<li><i class='ti-star'></i>".$hotel->review."</li>";
-								echo "<li><i class='ti-medall'></i>".$hotel->facilities."</li>";
+								echo "<li><i class='ti-world'></i>".$hotel->facilities."</li>";
 							}
 							?>
 						</ul>
@@ -135,16 +131,16 @@ if ($_POST) {
 						<div class="row">
 							<?php
 							if (!$_POST) {
-								echo "Please select Hotel 1 to compare";
+								echo "Please select Hotel to compare";
 							}
 							?>
 							<div class="col-md-12">
 								<div class="form-group">
 									<section>
 										<br>
-										<select name='Hotel_Name' style="width: 15%; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required >
+										<select name='Hotel_Name' style="width: 130px; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required >
 											<option value="" disabled selected>Select Hotel</option>
-											<option value="The White Rock Hotel">The White Rock Hotel</option>
+											<option value="Prestige Hotel">Prestige Hotel</option>
 											<option value="Spotlight Hotel">Spotlight Hotel</option>
 											<option value="Hotel Bliss">Hotel Bliss</option>
 										</select>
@@ -155,20 +151,16 @@ if ($_POST) {
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<?php
-		if ($_POST) {
-			echo '<h1 style="text-align: center; text-decoration: underline;">OR</h1>';
-		}
-		?>
+		</div>		
 
 		<div id="fh5co-contact-section">
 			<div class="row">
 				<div class="col-md-6">
 					<?php
 					if ($_POST) {
-						echo "<div class='fh5co-map'><img src=".$hotel2->image." alt=".$_POST['Hotel_Name']." style='max-width:100%; max-height:100%; object-fit: contain'></div>";
+						echo "<div class='fh5co-map'><img src=".$hotel2->image." alt=".$_POST['Hotel_Name']." style='width:100%; max-height:100%; object-fit: contain'></div>";
+					} else {
+						echo "<div class='fh5co-map'><img src='images/compare_image2.jpg' alt='background pic' style='width:100%; max-height:100%; object-fit: contain'></div>";
 					}
 					?>
 				</div>
@@ -195,16 +187,16 @@ if ($_POST) {
 						<div class="row">
 							<?php
 							if (!$_POST) {
-								echo "Please select Hotel 2 to compare";
+								echo "Please select Hotel to compare";
 							}
 							?>
 							<div class="col-md-12">
 								<div class="form-group">
 									<section>
 										<br>
-										<select name='Hotel_Name_2' style="width: 15%; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required>
+										<select name='Hotel_Name_2' style="width: 130px; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required>
 											<option value="" disabled selected>Select Hotel</option>
-											<option value="The White Rock Hotel">The White Rock Hotel</option>
+											<option value="Prestige Hotel">Prestige Hotel</option>
 											<option value="Spotlight Hotel">Spotlight Hotel</option>
 											<option value="Hotel Bliss">Hotel Bliss</option>
 										</select>
@@ -226,13 +218,13 @@ if ($_POST) {
 			<div class="row">
 				<div class="col-md-3">
 					<div class="copyright">
-						<p><small>&copy; Codi de Faria's OOP Project. <br> All Rights Reserved. <br>
+						<p><small>&copy; <strong>Codi de Faria's OOP Project.</strong> <br> All Rights Reserved. <br>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-3">
-							<h3>Company</h3>
+							<h3><strong>Company</strong></h3>
 							<ul class="link">
 								<li><a href="#">About Us</a></li>
 								<li><a href="#">Hotels</a></li>
@@ -241,7 +233,7 @@ if ($_POST) {
 							</ul>
 						</div>
 						<div class="col-md-3">
-							<h3>Our Facilities</h3>
+							<h3><strong>Our Facilities</strong></h3>
 							<ul class="link">
 								<li><a href="#">Resturant</a></li>
 								<li><a href="#">Bars</a></li>
@@ -252,7 +244,7 @@ if ($_POST) {
 							</ul>
 						</div>
 						<div class="col-md-6">
-							<h3>Subscribe</h3>
+							<h3><strong>Subscribe</strong></h3>
 							<p>Subscribe to hear more about us and receive our newspapers. </p>
 							<form action="#" id="form-subscribe">
 								<div class="form-field">
