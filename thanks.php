@@ -1,52 +1,30 @@
-<?php
-    echo "Thank you ".$_POST['name']." ".$_POST['surname'].", BOOKING CONFIRMED!<br>";
-    echo "You should receive an email with the details attached to ".$_POST['email'];
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thank youuuu</title>
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
+	<style>
+		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
+		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+	</style>
+	<link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
+	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
+	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
+</head>
+<body>
+	<header class="site-header" id="header">
+		<h1 class="site-header__title" data-lead-id="site-header-title">THANK YOU!</h1>
+	</header>
 
-    echo "<form method='post'><button type='submit'>Click here to view more techinical details about email</button></form>";
-?>
+	<div class="main-content">
+		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+		<p class="main-content__body" data-lead-id="main-content-body">Thank you so much <?php echo $_POST['name']." ".$_POST['surname']?> for booking. We Hope you have an amazing time! </p>
+	</div>
 
-<?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+	<footer class="site-footer" id="footer">
+		<p class="site-footer__fineprint" id="fineprint">Please look at your email provided (<?php echo $_POST['email']?>) to view the receipt and to get the details regarding your stay.</p>
+	</footer>
+</body>
 
-// Load Composer's autoloader
-require 'email/vendor/autoload.php';
-
-// Instantiation and passing `true` enables exceptions
-$mail = new PHPMailer(true);
-
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'smtp.mailtrap.io';                     // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'b2d7d1788a8c08';                       // SMTP username
-    $mail->Password   = 'de45537a61dbc0';                       // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 2525;                                   // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
-    //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('joe@example.com', 'Joe User');     // Add a recipient
-    $mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
-
-
-    // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
-?>
+<button type='submit' onclick="window.location.href='email.php'">Click here to view more techinical details about email</button>
