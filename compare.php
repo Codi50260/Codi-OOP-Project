@@ -1,6 +1,7 @@
 <?php require 'classes.php';
 
 if ($_POST) {
+	// Creating new class and assigining to var $hotel so that I can call individual vars inside the class once the form has been submitted
 	if ($_POST['Hotel_Name'] == 'Prestige Hotel') {
 		$hotel = new Prestige_Hotel();
 	} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
@@ -9,6 +10,7 @@ if ($_POST) {
 		$hotel = new Hotel_Bliss();
 	}
 
+	// Creating new class and assigining to var $hotel2 so that I can call individual vars inside the class once the form has been submitted
 	if ($_POST['Hotel_Name_2'] == 'Prestige Hotel') {
 		$hotel2 = new Prestige_Hotel();
 	} else if ($_POST['Hotel_Name_2'] == 'Spotlight Hotel') {
@@ -25,20 +27,8 @@ if ($_POST) {
 	<title>Codi's OOP Booking App | Compare</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
-	<!-- Stylesheets -->
 	<!-- Dropdown Menu -->
 	<link rel="stylesheet" href="css/superfish.css">
 	<!-- Date Picker -->
@@ -101,6 +91,7 @@ if ($_POST) {
 			<div class="row">
 				<div class="col-md-6">
 					<?php
+					// Calling the variable $Hotel with class so that I can grab its corrosponging data to compare
 					if ($_POST) {
 						echo "<div class='fh5co-map'><img src=".$hotel->image." alt=".$_POST['Hotel_Name']." style='width:100%; max-height:100%; object-fit: contain'></div>";
 					} else {
@@ -138,6 +129,7 @@ if ($_POST) {
 								<div class="form-group">
 									<section>
 										<br>
+										<!-- Hotel select to compare to the other one -->
 										<select name='Hotel_Name' style="width: 130px; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required >
 											<option value="" disabled selected>Select Hotel</option>
 											<option value="Prestige Hotel">Prestige Hotel</option>
@@ -157,6 +149,7 @@ if ($_POST) {
 			<div class="row">
 				<div class="col-md-6">
 					<?php
+					// Calling the variable $Hotel2 with class so that I can grab its corrosponging data to compare
 					if ($_POST) {
 						echo "<div class='fh5co-map'><img src=".$hotel2->image." alt=".$_POST['Hotel_Name']." style='width:100%; max-height:100%; object-fit: contain'></div>";
 					} else {
@@ -194,6 +187,7 @@ if ($_POST) {
 								<div class="form-group">
 									<section>
 										<br>
+										<!-- Hotel select to compare to the other one -->
 										<select name='Hotel_Name_2' style="width: 130px; padding: 10px 0; margin: 10px auto; border-radius: 5px; border: none; background-color: #9e9b9b; color: white" required>
 											<option value="" disabled selected>Select Hotel</option>
 											<option value="Prestige Hotel">Prestige Hotel</option>
@@ -213,6 +207,7 @@ if ($_POST) {
 		</div>
 	</form>
 
+	<!-- Footer to close off the page -->
 	<footer id="footer" class="fh5co-bg-color">
 		<div class="container">
 			<div class="row">

@@ -1,4 +1,12 @@
-<?php require 'classes.php'?>
+<?php require 'classes.php';
+
+// Static function to echo out the variable
+class staticClass {
+	public static function echoNames($name) {
+	  echo $name;
+	}
+  }
+?>
 <html class="no-js">
 		<head>
 		<meta charset="utf-8">
@@ -28,6 +36,7 @@
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
 		<script>
+			// Scipt to show error if date is wrong
 			function dateCheck() {
 				var x = document.getElementById("date-start").value;
 				var y = document.getElementById("date-end").value;
@@ -40,6 +49,7 @@
 					return false;
 				}
 			}
+			// Scipt to show error if hotel isn't selected
 			function selectHotel() {
 				var x = document.getElementById("optHotel").value;
 
@@ -51,6 +61,7 @@
 					return true;
 				}
 			}
+			// Scipt to check if all info has been included
 			function validate() {
 				bool = false
 				selectHotel();
@@ -107,6 +118,7 @@
 					 id="availability">
 					 	<span id="tooltiptext2" style="visibility: hidden;width: 300px;background-color: red;color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;bottom: 100%;left: 150px;margin-left: -60px;">No Hotel selected, Please try again</span>
 						<span id="tooltiptext" style="visibility: hidden;width: 300px;background-color: red;color: #fff;text-align: center;border-radius: 6px;padding: 5px 0;position: absolute;z-index: 1;bottom: 100%;left: 50%;margin-left: -60px;">Invalid date, Please try again</span>
+						<!-- Form to input data and send to confirm.php -->
 						<form action="confirm.php" method="post" id="subForm">
 							<div class="a-col">
 								<section>
@@ -142,6 +154,7 @@
 			</div>
 		</div>
 		
+		<!-- Fun info to see stats -->
 		<div id="fh5co-counter-section" class="fh5co-counters">
 			<div class="container">
 				<div class="row">
@@ -167,11 +180,14 @@
 
 		<div id="featured-hotel" class="fh5co-bg-color">
 			<div class="container">
-				
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-title text-center">
-							<h2><strong>Featured Hotels</strong></h2>
+							<!-- Featured Hotels // using static function here -->
+							<?php 
+								$var = "<h2><strong>Featured Hotels</strong></h2>"; 
+								staticClass::echoNames($var); 
+							?>
 						</div>
 					</div>
 				</div>
@@ -179,6 +195,7 @@
 				<div class="row">
 					<div class="feature-full-1col">
 						<?php
+							// Creating new class and assigining to var $Bliss so that I can call individual vars inside the class
 							$Bliss = new Hotel_Bliss();
 							echo "<div class='image' style='background-image: url(".$Bliss->image.");'>";
 						?>
@@ -199,6 +216,7 @@
 
 					<div class="feature-full-1col" id="hotel">
 						<?php
+							// Creating new class and assigining to var $Spotlight so that I can call individual vars inside the class
 							$Spotlight = new Spotlight_Hotel();
 							echo "<div class='image' style='background-image: url(".$Spotlight->image.");'>";
 						?>
@@ -219,6 +237,7 @@
 
 					<div class="feature-full-1col">
 						<?php
+							// Creating new class and assigining to var $Prestige so that I can call individual vars inside the class
 							$Prestige = new Prestige_Hotel();
 							echo "<div class='image' style='background-image: url(".$Prestige->image.");'>";
 						?>
@@ -245,7 +264,11 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-title text-center">
-							<h2><strong>Hotel Facilities</strong></h2>
+							<!-- Hotel Facilities // using static function here -->
+							<?php 
+								$var2 = "<h2><strong>Hotel Facilities</strong></h2>"; 
+								staticClass::echoNames($var2); 
+							?>
 						</div>
 					</div>
 				</div>
@@ -283,10 +306,12 @@
 						</a>
 					</nav>
 					<div class="tab-content-container">
+						<!-- Restaurant -->
 						<div class="tab-content active show" data-tab-content="tab1" id="restaurant">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6">
+										<!-- Using the var that I assigned to a new class to call each individual var in classes.php -->
 										<?php
 											echo "<img src=".$Bliss->resImage." class='img' alt='Hotel Bliss Restaurant' style='max-width:100%; max-height:100%; object-fit: cover'>";
 										?>
@@ -351,6 +376,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- Bar -->
 						<div class="tab-content" data-tab-content="tab2" id="bar">
 							<div class="container">
 								<div class="row">
@@ -419,6 +445,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- Pick-up / Drop-off -->
 						<div class="tab-content" data-tab-content="tab3" id="parking">
 							<div class="container">
 								<div class="row">
@@ -443,6 +470,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- Swimming Pool -->
 						<div class="tab-content" data-tab-content="tab4" id="pool">
 							<div class="container">
 								<div class="row">
@@ -489,6 +517,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- Spa -->
 						<div class="tab-content" data-tab-content="tab5" id="spa">
 							<div class="container">
 								<div class="row">
@@ -535,6 +564,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- Gym -->
 						<div class="tab-content" data-tab-content="tab6" id="gym">
 							<div class="container">
 								<div class="row">
@@ -586,6 +616,7 @@
 			</div>
 		</div>
 
+		<!-- Footer to close off the page -->
 		<footer id="footer" class="fh5co-bg-color">
 			<div class="container">
 				<div class="row">

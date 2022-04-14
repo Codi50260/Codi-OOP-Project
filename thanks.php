@@ -1,4 +1,5 @@
 <head>
+	<!-- Thank you page - template -->
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +28,7 @@
 
 	<div class="main-content">
 		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
+		<!-- Showing appreciation to user -->
 		<p class="main-content__body" data-lead-id="main-content-body">Thank you so much <?php echo $_POST['name']." ".$_POST['surname']?> for booking with us. We hope you have the most amazing time! </p>
 	</div>
 
@@ -42,4 +44,5 @@
 </body>
 
 <br><br><br><br><br><br><br><br><br><br>
+<!-- Button to the email.php to show understanding of how the mailing system works and how to use Composer -->
 <button type='submit' onclick="window.location.href='email.php'">Click here to view more techinical details about email</button>

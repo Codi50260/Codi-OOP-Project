@@ -1,5 +1,6 @@
 <?php require 'classes.php';
 
+// Function to convert the calender format to a more standard one so I can calculate the diff between days
 function difference() {
 	$dateOut = $_POST["CheckOut"];
 	$dateIn = $_POST["CheckIn"];
@@ -20,21 +21,8 @@ function difference() {
 	<title>Codi's OOP Booking App | Confirm</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
-
-	<!-- Stylesheets -->
 	<!-- Dropdown Menu -->
 	<link rel="stylesheet" href="css/superfish.css">
 	<!-- Date Picker -->
@@ -95,6 +83,7 @@ function difference() {
 
 	<div class="feature-full-1col" id="hotel">
 		<?php
+		// Creating new class and assigining to var $hotel so that I can call individual vars inside the class once the form on index.php has been submitted
 		if ($_POST['Hotel_Name'] == 'Prestige Hotel') {
 			$hotel = new Prestige_Hotel();
 		} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
@@ -130,6 +119,7 @@ function difference() {
 		<div class="container">
 			<div class="row">
 				<div id="availability">
+					<!-- Form to submit to the final thank you page - This is just final confirmation to make sure all the info is correct -->
 					<form action="thanks.php" method="post">
 						<div class="a-col">
 							<div class="input-field_2">
@@ -161,6 +151,7 @@ function difference() {
 		</div>
 	</div>
 
+	<!-- Footer to close off the page -->
 	<footer id="footer" class="fh5co-bg-color">
 		<div class="container">
 			<div class="row">

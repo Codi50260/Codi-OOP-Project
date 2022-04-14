@@ -1,4 +1,5 @@
 <?php
+// Classes file which contains all the information about the hotels and which I can use to update any info about the hotel and which will update throughout the website
 class Prestige_Hotel {
 	public $name = "Prestige Hotel";
 	public $location = "Theodore Diligiannis 40, Greece";
