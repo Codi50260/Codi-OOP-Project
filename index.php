@@ -87,7 +87,7 @@
 				</div>
 			</header>
 		</div>
-		<div class="fh5co-parallax" style="background-image: url(images/background_2.jpg); height: 100%" data-stellar-background-ratio="0.5">
+		<div class="fh5co-parallax" style="background-image: url(images/background_index.jpg); height: 100%" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
