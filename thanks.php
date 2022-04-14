@@ -7,6 +7,14 @@
 	<style>
 		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
 		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+        
+        body { 
+            background: url(images/plane_background.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
 	</style>
 	<link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
@@ -19,12 +27,19 @@
 
 	<div class="main-content">
 		<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
-		<p class="main-content__body" data-lead-id="main-content-body">Thank you so much <?php echo $_POST['name']." ".$_POST['surname']?> for booking. We Hope you have an amazing time! </p>
+		<p class="main-content__body" data-lead-id="main-content-body">Thank you so much <?php echo $_POST['name']." ".$_POST['surname']?> for booking with us. We hope you have the most amazing time! </p>
 	</div>
 
 	<footer class="site-footer" id="footer">
-		<p class="site-footer__fineprint" id="fineprint">Please look at your email provided (<?php echo $_POST['email']?>) to view the receipt and to get the details regarding your stay.</p>
-	</footer>
+		<p class="site-footer__fineprint" id="fineprint">Please look out for our email that has been sent to <?php echo $_POST['email']?> to confirm your booking as well as the details with regards to your stay.</p>
+        <p class="site-footer__fineprint">Please let us know if there is anything else that we can assist you with.</p>
+        <br>
+        <div class="site-footer__fineprint">Contact Details:
+            <p>Phone: +27 63 891 9739</p>
+            <p>Email: codidf25@gmail.com</p>
+        </div>
+    </footer>
 </body>
 
+<br><br><br><br><br><br><br><br><br><br>
 <button type='submit' onclick="window.location.href='email.php'">Click here to view more techinical details about email</button>
