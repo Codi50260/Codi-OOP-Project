@@ -8207,6 +8207,63 @@ div.cs-select span {
   outline: none;
 }
 
+#availability .a-col .input-field_2 {
+  width: 100%;
+}
+#availability .a-col .input-field_2 label, #availability .a-col .input-field_2 input[type="text"] {
+  display: inline-block;
+}
+#availability .a-col .input-field_2 label, #availability .a-col .input-field_2 input[type="email"] {
+  display: inline-block;
+}
+#availability .a-col .input-field_2 label {
+  margin-right: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  float: left;
+  margin-top: 7px;
+}
+#availability .a-col .input-field_2 input[type="text"] {
+  float: right;
+  margin-right: 0;
+  width: 60%;
+  height: 42px;
+  font-size: 15px;
+  line-height: 36px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: #fff;
+  background: transparent url(../images/arrow_down_input.png) 98% 90% no-repeat;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0px;
+  box-shadow: none;
+}
+#availability .a-col .input-field_2 input[type="email"] {
+  float: right;
+  margin-right: 0;
+  width: 60%;
+  height: 42px;
+  font-size: 15px;
+  line-height: 36px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: #fff;
+  background: transparent url(../images/arrow_down_input.png) 98% 90% no-repeat;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0px;
+  box-shadow: none;
+}
+#availability .a-col .input-field_2 input[type="text"]:focus, #availability .a-col .input-field_2 input[type="text"]:active {
+  box-shadow: none;
+  outline: none;
+}
+#availability .a-col .input-field_2 input[type="text"]:focus, #availability .a-col .input-field_2 input[type="email"]:active {
+  box-shadow: none;
+  outline: none;
+}
+
 .fh5co-counters {
   padding: 3em 0;
   background-size: cover;
