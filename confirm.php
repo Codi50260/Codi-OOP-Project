@@ -66,7 +66,6 @@ function difference() {
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.php">Codi's Booking App</a></h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li><a href="index.php">Home</a></li>
@@ -80,14 +79,13 @@ function difference() {
 		
 	</div>
 	<!-- end:fh5co-header -->
-	<div class="fh5co-parallax" style="background-image: url(images/slider1.jpg);" data-stellar-background-ratio="0.5">
+	<div class="fh5co-parallax" style="background-image: url(images/background_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
 						<h1 class="text-center">Confirmation of Booking</h1>
-						<p><span>Please fill in and confirm details are correct</span></p>
 					</div>
 				</div>
 			</div>
@@ -97,8 +95,8 @@ function difference() {
 
 	<div class="feature-full-1col" id="hotel">
 		<?php
-		if ($_POST['Hotel_Name'] == 'The White Rock Hotel') {
-			$hotel = new The_White_Rock_Hotel();
+		if ($_POST['Hotel_Name'] == 'Prestige Hotel') {
+			$hotel = new Prestige_Hotel();
 		} else if ($_POST['Hotel_Name'] == 'Spotlight Hotel') {
 			$hotel = new Spotlight_Hotel();
 		} else if ($_POST['Hotel_Name'] == 'Hotel Bliss') {
@@ -114,17 +112,17 @@ function difference() {
 		</div>
 		<div class="desc">
 			<h3>
-				<?php echo $hotel->name;?>
+				<?php echo $hotel->name."<br>";
+				echo $hotel->review?>
 			</h3>
 			<ul class="contact-info">
 				<li><i class='ti-pin'></i><?php echo $hotel->location ?></li>
-				<li><i class='ti-star'></i><?php echo $hotel->review ?></li>
-				<li><i class='ti-world'></i><?php echo $hotel->facilities ?></li>
+				<li><i class='ti-world'></i>Facilities - <?php echo $hotel->facilities ?></li>
 				<li><i class='ti-time'></i> Number of Days: <?php $datediff = difference(); echo $datediff ?></li>
-				<li><i class='ti-thumb-up'></i> Check In: <?php echo $_POST["CheckIn"] ?></li>
-				<li><i class='ti-thumb-down'></i> Check Out: <?php echo $_POST["CheckOut"] ?></li>
-				<li><i class='ti-money'></i> Total Cost: $<?php echo $hotel->rate * $datediff ?></li>
+				<li><i class='ti-calendar'></i> Check In - <?php echo $_POST["CheckIn"] ?></li>
+				<li><i class='ti-calendar'></i> Check Out - <?php echo $_POST["CheckOut"] ?></li>
 			</ul>
+			<div><i class='ti'></i> Total Cost: $<?php echo $hotel->rate * $datediff ?></div>
 		</div>
 	</div>
 
@@ -135,14 +133,14 @@ function difference() {
 					<form action="thanks.php" method="post">
 						<div class="a-col">
 							<div class="input-field_2">
-								<label for="name">Name</label>
-								<input type="text" class="form-control" id="name" name="name" required/>
+								<label for="surname">Surname</label>
+								<input type="text" class="form-control" id="surname" name="surname" required/>
 							</div>
 						</div>
 						<div class="a-col">
 							<div class="input-field_2">
-								<label for="surname">Surname</label>
-								<input type="text" class="form-control" id="surname" name="surname" required/>
+								<label for="name">Name</label>
+								<input type="text" class="form-control" id="name" name="name" required/>
 							</div>
 						</div>
 						<div class="a-col">
@@ -168,13 +166,13 @@ function difference() {
 			<div class="row">
 				<div class="col-md-3">
 					<div class="copyright">
-						<p><small>&copy; Codi de Faria's OOP Project. <br> All Rights Reserved. <br>
+						<p><small>&copy; <strong>Codi de Faria's OOP Project.</strong> <br> All Rights Reserved. <br>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-3">
-							<h3>Company</h3>
+							<h3><strong>Company</strong></h3>
 							<ul class="link">
 								<li><a href="#">About Us</a></li>
 								<li><a href="#">Hotels</a></li>
@@ -183,7 +181,7 @@ function difference() {
 							</ul>
 						</div>
 						<div class="col-md-3">
-							<h3>Our Facilities</h3>
+							<h3><strong>Our Facilities</strong></h3>
 							<ul class="link">
 								<li><a href="#">Resturant</a></li>
 								<li><a href="#">Bars</a></li>
@@ -194,7 +192,7 @@ function difference() {
 							</ul>
 						</div>
 						<div class="col-md-6">
-							<h3>Subscribe</h3>
+							<h3><strong>Subscribe</strong></h3>
 							<p>Subscribe to hear more about us and receive our newspapers. </p>
 							<form action="#" id="form-subscribe">
 								<div class="form-field">
