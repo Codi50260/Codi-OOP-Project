@@ -87,14 +87,14 @@
 				</div>
 			</header>
 		</div>
-		<div class="fh5co-parallax" style="background-image: url(images/slider3.jpg); height: 100%" data-stellar-background-ratio="0.5">
+		<div class="fh5co-parallax" style="background-image: url(images/background_2.jpg); height: 100%" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 						<div class="fh5co-intro fh5co-table-cell">
-							<h1 class="text-center" style="font-family: Geomanist">Find your own (s)pace</h1>
-							<p>Make yourself right at home, open spaces, modern facilities and fully-equipped hotels are yours for the taking. Whether you stay to dream, dine, or dance, there is always something here for you.</a></p>
+							<h1 class="text-center">YOUR ESCAPE AWAITS</h1>
+							<p>At home in the world's most inspiring locations, Greece and Italy, hand-picked for exceptional beauty and unique cultural charm, Hotel Bliss, Spotlight Hotel and Prestige Hotel are havens of outstanding style and service that place you in the heart of every fascinating environment. With incredible tailored experiences across beach, nature, and urban locations, as well as spectacular spaces to simply 'be'... Unforgettable moments begin at any one of these hotels.</a></p>
 						</div>
 					</div>
 				</div>
@@ -112,7 +112,7 @@
 								<section>
 									<select class="cs-select cs-skin-border" name='Hotel_Name' id="optHotel" required>
 										<option value="" disabled selected>Select Hotel</option>
-										<option value="The White Rock Hotel">The White Rock Hotel</option>
+										<option value="Prestige Hotel">Prestige Hotel</option>
 										<option value="Spotlight Hotel">Spotlight Hotel</option>
 										<option value="Hotel Bliss">Hotel Bliss</option>
 									</select>
@@ -171,7 +171,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-title text-center">
-							<h2>Featured Hotels</h2>
+							<h2><strong>Featured Hotels</strong></h2>
 						</div>
 					</div>
 				</div>
@@ -219,19 +219,19 @@
 
 					<div class="feature-full-1col">
 						<?php
-							$WhiteRock = new The_White_Rock_Hotel();
-							echo "<div class='image' style='background-image: url(".$WhiteRock->image.");'>";
+							$Prestige = new Prestige_Hotel();
+							echo "<div class='image' style='background-image: url(".$Prestige->image.");'>";
 						?>
 							<div class="descrip text-center">
 								<?php
-									echo "<p><span>$".$WhiteRock->rate."/night</span></p>";
+									echo "<p><span>$".$Prestige->rate."/night</span></p>";
 								?>
 							</div>
 						</div>
 						<div class="desc">
 							<?php
-								echo "<h3>".$WhiteRock->name."</h3>";
-								echo "<p>".$WhiteRock->desc."</p>";
+								echo "<h3>".$Prestige->name."</h3>";
+								echo "<p>".$Prestige->desc."</p>";
 							?>
 							<p><a href="#form" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
 						</div>
@@ -245,7 +245,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-title text-center">
-							<h2>Hotel Facilities</h2>
+							<h2><strong>Hotel Facilities</strong></h2>
 						</div>
 					</div>
 				</div>
@@ -300,7 +300,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Bliss->resHour."</strong>";
+												echo $Bliss->resHour;
 											?>
 										</p>
 									</div>
@@ -322,7 +322,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Spotlight->resHour."</strong>";
+												echo $Spotlight->resHour;
 											?>
 										</p>
 									</div>
@@ -332,19 +332,19 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$WhiteRock->resImage." class='img' alt='White Rock Hotel Restaurant' style='max-width:100%; max-height:100%; object-fit: cover'>";
+											echo "<img src=".$Prestige->resImage." class='img' alt='Prestige Hotel Restaurant' style='max-width:100%; max-height:100%; object-fit: cover'>";
 										?>
 									</div>
 									<div class="col-md-6">
 										<?php
-											echo "<span class='super-heading-sm'>".$WhiteRock->resType."</span>";
-											echo "<h3 class='heading'>".$WhiteRock->name."</h3>";
-											echo "<p>".$WhiteRock->restaurant."</p>";
+											echo "<span class='super-heading-sm'>".$Prestige->resType."</span>";
+											echo "<h3 class='heading'>".$Prestige->name."</h3>";
+											echo "<p>".$Prestige->restaurant."</p>";
 										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$WhiteRock->resHour."</strong>";
+												echo $Prestige->resHour;
 											?>
 										</p>
 									</div>
@@ -368,7 +368,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Bliss->barHour."</strong>";
+												echo $Bliss->barHour;
 											?>
 										</p>
 									</div>
@@ -390,7 +390,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Spotlight->barHour."</strong>";
+												echo $Spotlight->barHour;
 											?>
 										</p>
 									</div>
@@ -400,19 +400,19 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$WhiteRock->barImage." class='img' alt='White Rock Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
+											echo "<img src=".$Prestige->barImage." class='img' alt='Prestige Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
 										<?php
-											echo "<span class='super-heading-sm'>".$WhiteRock->barType."</span>";
-											echo "<h3 class='heading'>".$WhiteRock->name."</h3>";
-											echo "<p>".$WhiteRock->bar."</p>";
+											echo "<span class='super-heading-sm'>".$Prestige->barType."</span>";
+											echo "<h3 class='heading'>".$Prestige->name."</h3>";
+											echo "<p>".$Prestige->bar."</p>";
 										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$WhiteRock->barHour."</strong>";
+												echo $Prestige->barHour;
 											?>
 										</p>
 									</div>
@@ -436,7 +436,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Bliss->parkingHour."</strong>";
+												echo $Bliss->parkingHour;
 											?>
 										</p>
 									</div>
@@ -460,7 +460,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Bliss->poolHour."</strong>";
+												echo $Bliss->poolHour;
 											?>
 										</p>
 									</div>
@@ -482,7 +482,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Spotlight->poolHour."</strong>";
+												echo $Spotlight->poolHour;
 											?>
 										</p>
 									</div>
@@ -506,7 +506,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Bliss->spaHour."</strong>";
+												echo $Bliss->spaHour;
 											?>
 										</p>
 									</div>
@@ -516,19 +516,19 @@
 								<div class="row">
 									<div class="col-md-6">
 										<?php
-											echo "<img src=".$WhiteRock->spaImage." class='img' alt='White Rock Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
+											echo "<img src=".$Prestige->spaImage." class='img' alt='Prestige Hotel Image' style='max-width:100%; max-height:100%; object-fit: contain'>";
 										?>
 									</div>
 									<div class="col-md-6">
 										<?php
-											echo "<span class='super-heading-sm'>".$WhiteRock->spaType."</span>";
-											echo "<h3 class='heading'>".$WhiteRock->name."</h3>";
-											echo "<p>".$WhiteRock->spa."</p>";
+											echo "<span class='super-heading-sm'>".$Prestige->spaType."</span>";
+											echo "<h3 class='heading'>".$Prestige->name."</h3>";
+											echo "<p>".$Prestige->spa."</p>";
 										?>
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$WhiteRock->spaHour."</strong>";
+												echo $Prestige->spaHour;
 											?>
 										</p>
 									</div>
@@ -552,7 +552,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Bliss->gymHour."</strong>";
+												echo $Bliss->gymHour;
 											?>
 										</p>
 									</div>
@@ -574,7 +574,7 @@
 										<p class="service-hour">
 											<span>Service Hours</span>
 											<?php
-												echo "<strong>".$Spotlight->gymHour."</strong>";
+												echo $Spotlight->gymHour;
 											?>
 										</p>
 									</div>
@@ -586,56 +586,18 @@
 			</div>
 		</div>
 
-		<div id="testimonial">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-title text-center">
-							<h2>Happy Customer Says...</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="testimony">
-							<blockquote>
-								&ldquo;If you’re looking for a top quality hotel look no further. We had high expectations for what we choose and they still managed to exceed them!! Thanks so much&rdquo;
-							</blockquote>
-							<p class="author"><cite>John Doe</cite></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="testimony">
-							<blockquote>
-								&ldquo;Me and my wife had a delightful weekend get away here, the staff were so friendly and attentive. Highly Recommended&rdquo;
-							</blockquote>
-							<p class="author"><cite>Rob Smith</cite></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="testimony">
-							<blockquote>
-								&ldquo;My mouth is still drooling from the decorations and our time spent here&rdquo;
-							</blockquote>
-							<p class="author"><cite>Jane Foster</cite></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<footer id="footer" class="fh5co-bg-color">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
 						<div class="copyright">
-							<p><small>&copy; Codi de Faria's OOP Project. <br> All Rights Reserved. <br>
+							<p><small>&copy; <strong>Codi de Faria's OOP Project.</strong> <br> All Rights Reserved. <br>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="row">
 							<div class="col-md-3">
-								<h3>Company</h3>
+								<h3><strong>Company</strong></h3>
 								<ul class="link">
 									<li><a href="#">About Us</a></li>
 									<li><a href="#hotel">Hotels</a></li>
@@ -644,7 +606,7 @@
 								</ul>
 							</div>
 							<div class="col-md-3">
-								<h3>Our Facilities</h3>
+								<h3><strong>Our Facilities</strong></h3>
 								<ul class="link">
 									<li><a href="#resturant">Resturant</a></li>
 									<li><a href="#bar">Bars</a></li>
@@ -655,7 +617,7 @@
 								</ul>
 							</div>
 							<div class="col-md-6">
-								<h3>Subscribe</h3>
+								<h3><strong>Subscribe</strong></h3>
 								<p>Subscribe to hear more about us and receive our newspapers. </p>
 								<form action="#" id="form-subscribe">
 									<div class="form-field">
